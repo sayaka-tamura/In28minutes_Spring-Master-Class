@@ -17,10 +17,7 @@ public class BinarySearchImpl {
 	@Autowired // tells Spring "that is a dependency"
 	private SortAlgorithm sortAlgorithm;
 
-	public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-		super();
-		this.sortAlgorithm = sortAlgorithm;
-	}
+	// Constructor Injection > Setter Injection when you need to use
 
 	public int binarySearch(int[] numbers, int numberToSearchFor) {
 
