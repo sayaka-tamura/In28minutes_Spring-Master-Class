@@ -8,11 +8,14 @@ package com.in28minutes.spring.basics.springin5steps;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 // Java Bean : a software component that has been designed to be reusable in a variety of different environments. 
 
 @Component // tells Spring "This is a bean that has to manage"
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Change the default scope (singleton) to prototype
 public class BinarySearchImpl {
 
 	// tells Spring "that is a dependency"
