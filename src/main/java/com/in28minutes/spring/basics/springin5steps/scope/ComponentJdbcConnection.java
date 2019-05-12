@@ -14,8 +14,8 @@ import org.springframework.stereotype.Component;
 @Component
 // Tell SCOPE_PROTOTYPE to main method. in main, JdbcConneciton class is not be called, and beans does not use prototype.
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class JdbcConnection {
-	public JdbcConnection() {
+public class ComponentJdbcConnection {
+	public ComponentJdbcConnection() {
 		System.out.println("JDBC Connction");
 	}
 }

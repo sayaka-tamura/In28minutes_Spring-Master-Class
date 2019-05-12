@@ -4,13 +4,13 @@
  * Udemy Spring Framework Master Class
  * https://github.com/in28minutes/spring-master-class/tree/master/01-spring-in-depth
  */
-package com.in28minutes.spring.basics.springin5steps.scope;
+package com.in28minutes.spring.basics.componentscan;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PersonDAO {
+public class ComponentDAO {
 
 	@Autowired
 	ComponentJdbcConnection jdbcConnection;
@@ -19,7 +19,7 @@ public class PersonDAO {
 		return jdbcConnection;
 	}
 
-	public void setJdbcConnection(ComponentJdbcConnection jdbcConnection) {
+	public void setComponentJdbcConnection(ComponentJdbcConnection jdbcConnection) {
 		this.jdbcConnection = jdbcConnection;
 	}
 
