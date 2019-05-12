@@ -15,7 +15,10 @@ import org.springframework.stereotype.Component;
 public class BinarySearchImpl {
 
 	@Autowired // tells Spring "that is a dependency"
+	// "Regular Auto-wiring": Do not forget put @Primary to either beans
 	private SortAlgorithm sortAlgorithm;
+	// "Auto-wiring by name" : Do not forget remove @Primary from either beans
+	// private SortAlgorithm bubbleSortAlgorithm;
 
 	// Constructor Injection > Setter Injection when you need to use
 
