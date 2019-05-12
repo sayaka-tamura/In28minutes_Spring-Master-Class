@@ -4,7 +4,7 @@
  * Udemy Spring Framework Master Class
  * Spring Level 1 - Introduction to Spring Framework in 10 Steps
  */
-package com.in28minutes.spring.basics.springin5steps;
+package com.in28minutes.spring.basics.springin5steps.basic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
