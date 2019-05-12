@@ -7,6 +7,7 @@
 package com.in28minutes.spring.basics.springin5steps;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // Java Bean : a software component that has been designed to be reusable in a variety of different environments. 
@@ -14,7 +15,10 @@ import org.springframework.stereotype.Component;
 @Component // tells Spring "This is a bean that has to manage"
 public class BinarySearchImpl {
 
-	@Autowired // tells Spring "that is a dependency"
+	// tells Spring "that is a dependency"
+	@Autowired
+	// Used to specify beans you'd like to use
+	@Qualifier("bubble")
 	// "Regular Auto-wiring": Do not forget put @Primary to either beans
 	private SortAlgorithm sortAlgorithm;
 	// "Auto-wiring by name" : Do not forget remove @Primary from either beans
