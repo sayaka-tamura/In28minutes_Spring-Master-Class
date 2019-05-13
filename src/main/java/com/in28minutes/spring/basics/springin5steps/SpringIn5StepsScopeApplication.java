@@ -14,10 +14,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.in28minutes.spring.basics.componentscan.ComponentDAO;
+import com.in28minutes.spring.basics.springin5steps.scope.PersonDAO;
 
 @SpringBootApplication
-@ComponentScan("com.in28minutes.spring.basics.componentscan") // used when you want to scan other packages
+@ComponentScan("com.in28minutes.spring.basics.springin5steps.scope") // used when you want to scan other packages
 public class SpringIn5StepsScopeApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsScopeApplication.class);
@@ -27,9 +27,13 @@ public class SpringIn5StepsScopeApplication {
 		// Application Context: to use for getting the beans
 		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsScopeApplication.class, args);
 		// Get beans from PersonDAO class
-		ComponentDAO componentDao = applicationContext.getBean(ComponentDAO.class);
+		PersonDAO personDao = applicationContext.getBean(PersonDAO.class);
+		PersonDAO personDao2 = applicationContext.getBean(PersonDAO.class);
 
-		LOGGER.info("{}", componentDao);
+		LOGGER.info("{}", personDao);
+		LOGGER.info("{}", personDao.getJdbcConnection());
+		LOGGER.info("{}", personDao2);
+		LOGGER.info("{}", personDao2.getJdbcConnection());
 	}
 
 }

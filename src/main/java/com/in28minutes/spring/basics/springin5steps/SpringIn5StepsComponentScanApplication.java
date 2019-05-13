@@ -12,10 +12,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
-import com.in28minutes.spring.basics.springin5steps.scope.PersonDAO;
+import com.in28minutes.spring.basics.componentscan.ComponentDAO;
 
 @SpringBootApplication
+@ComponentScan("com.in28minutes.spring.basics.componentscan") // used when you want to scan other packages
 public class SpringIn5StepsComponentScanApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsComponentScanApplication.class);
@@ -23,15 +25,12 @@ public class SpringIn5StepsComponentScanApplication {
 	public static void main(String[] args) {
 
 		// Application Context: to use for getting the beans
-		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsComponentScanApplication.class, args);
+		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsComponentScanApplication.class,
+				args);
 		// Get beans from PersonDAO class
-		PersonDAO personDao = applicationContext.getBean(PersonDAO.class);
-		PersonDAO personDao2 = applicationContext.getBean(PersonDAO.class);
+		ComponentDAO componentDao = applicationContext.getBean(ComponentDAO.class);
 
-		LOGGER.info("{}", personDao);
-		LOGGER.info("{}", personDao.getJdbcConnection());
-		LOGGER.info("{}", personDao2);
-		LOGGER.info("{}", personDao2.getJdbcConnection());
+		LOGGER.info("{}", componentDao);
 	}
 
 }
