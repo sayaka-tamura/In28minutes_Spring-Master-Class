@@ -10,11 +10,13 @@ package com.in28minutes.spring.basics.springin5steps;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 import com.in28minutes.spring.basics.springin5steps.basic.BinarySearchImpl;
 
 @SpringBootApplication // automatically scan package and its sub-packages
 						// (in this case "com.in28minutes.spring.basics.springin5steps")
+@ComponentScan
 public class SpringIn5StepsBasicApplication {
 
 	public static void main(String[] args) {

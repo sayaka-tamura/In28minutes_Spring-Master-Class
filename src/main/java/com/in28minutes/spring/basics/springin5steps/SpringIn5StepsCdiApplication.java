@@ -14,26 +14,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.in28minutes.spring.basics.springin5steps.scope.PersonDAO;
+import com.in28minutes.spring.basics.springin5steps.cdi.SomeCdiBusiness;
 
 @SpringBootApplication
 @ComponentScan
-public class SpringIn5StepsScopeApplication {
+public class SpringIn5StepsCdiApplication {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsScopeApplication.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsCdiApplication.class);
 
 	public static void main(String[] args) {
 
 		// Application Context: to use for getting the beans
-		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsScopeApplication.class, args);
+		ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsCdiApplication.class, args);
 		// Get beans from PersonDAO class
-		PersonDAO personDao = applicationContext.getBean(PersonDAO.class);
-		PersonDAO personDao2 = applicationContext.getBean(PersonDAO.class);
+		SomeCdiBusiness business = applicationContext.getBean(SomeCdiBusiness.class);
 
-		LOGGER.info("{}", personDao);
-		LOGGER.info("{}", personDao.getJdbcConnection());
-		LOGGER.info("{}", personDao2);
-		LOGGER.info("{}", personDao2.getJdbcConnection());
+		LOGGER.info("{}, dao-{}", business, business.getSomeCdiDao());
 	}
 
 }
